@@ -1,4 +1,4 @@
-FROM ubuntu:18.04 AS spython-base
+FROM ubuntu:18.04
 RUN echo "Hello from inside the container"
 RUN apt-get update
 RUN apt-get -y install vim

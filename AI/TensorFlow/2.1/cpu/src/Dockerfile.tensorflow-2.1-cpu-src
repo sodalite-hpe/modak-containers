@@ -12,9 +12,8 @@ RUN wget -O bazel https://github.com/bazelbuild/bazel/releases/download/2.0.0/ba
 RUN chmod +x bazel
 RUN ./bazel
 RUN export PATH=$PATH:$(pwd)
-RUN git clone https://github.com/tensorflow/tensorflow.git
+RUN git clone -b r2.1  https://github.com/tensorflow/tensorflow.git
 RUN cd tensorflow
-RUN git checkout r2.1
 RUN echo "/usr/bin/python3" | ./configure
 RUN bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
 RUN ./bazel-bin/tensorflow/tools/pip_package/build_pip_package tensorflow_pkg

@@ -25,9 +25,8 @@ From: modakopt/containers:base-ubuntu-18-04
 	export PATH=$PATH:$(pwd)
 
 	# get newest tensorflow
-	git clone https://github.com/tensorflow/tensorflow.git
+	git clone -b r2.1 https://github.com/tensorflow/tensorflow.git
 	cd tensorflow
-        git checkout r2.1
 
 	# pass python3 to interactive package
 	echo "/usr/bin/python3" | ./configure

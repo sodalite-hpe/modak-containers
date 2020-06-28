@@ -29,7 +29,7 @@ From: modakopt/containers:base-ubuntu-18-04
 	cd tensorflow
 
 	# pass python3 to interactive package
-	echo "/usr/bin/python3" | ./configure
+	echo "python3" | ./configure
 	# build with XLA support - enabled by default 
 	# set to optimized build --config=opt
 	bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package

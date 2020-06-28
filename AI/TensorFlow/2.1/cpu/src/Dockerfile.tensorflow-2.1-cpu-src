@@ -14,7 +14,7 @@ RUN ./bazel
 RUN export PATH=$PATH:$(pwd)
 RUN git clone https://github.com/tensorflow/tensorflow.git
 RUN cd tensorflow
-RUN echo "/usr/bin/python3" | ./configure
+RUN echo "python3" | ./configure
 RUN bazel build --config=opt //tensorflow/tools/pip_package:build_pip_package
 RUN ./bazel-bin/tensorflow/tools/pip_package/build_pip_package tensorflow_pkg
 RUN pip3 install tensorflow_pkg/tensorflow-2.1.0-cp36-cp36m-linux_x86_64.whl

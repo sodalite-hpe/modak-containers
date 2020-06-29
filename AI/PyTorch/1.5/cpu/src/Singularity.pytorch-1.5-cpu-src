@@ -29,14 +29,15 @@ export PATH
 	# Get pytorch source
 	git clone --recursive https://github.com/pytorch/pytorch
 	cd pytorch
+    	git checkout tags/v1.5.1
 	export CMAKE_PREFIX_PATH=${CONDA_PREFIX:-"$(dirname $(which conda))/../"}
-	python setup.py install
+	python3 setup.py install
 
 	# Get torchvision source
 	cd ../
 	git clone --recursive https://github.com/pytorch/vision
 	cd vision
-	python setup.py install
+	python3 setup.py install
 
 	# Get pytorch examples
 	cd ../

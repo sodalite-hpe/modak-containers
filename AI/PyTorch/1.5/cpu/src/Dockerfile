@@ -14,11 +14,12 @@ RUN conda install numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typin
 RUN export USE_CUDA=0
 RUN git clone --recursive https://github.com/pytorch/pytorch
 WORKDIR /home/pytorch
+RUN git checkout tags/v1.5.1
 RUN export CMAKE_PREFIX_PATH=${CONDA_PREFIX:-"$(dirname $(which conda))/../"}
-RUN python setup.py install
+RUN python3 setup.py install
 WORKDIR /home
 RUN git clone --recursive https://github.com/pytorch/vision
 WORKDIR /home/vision
-RUN python setup.py install
+RUN python3 setup.py install
 WORKDIR /home
 RUN git clone --recursive https://github.com/pytorch/examples

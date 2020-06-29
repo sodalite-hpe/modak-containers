@@ -1,0 +1,8 @@
+BootStrap: docker
+From: modakopt/containers:base-ubuntu-18-04
+
+%post
+    pip3 install torch==1.15
+
+%labels
+    Author nina, karthee
